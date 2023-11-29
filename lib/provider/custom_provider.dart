@@ -7,6 +7,7 @@ class CustomProvider with ChangeNotifier{
 
   Future<VideoModel> getVide(int page)async{
     videoModel = await CustomHttp.getVideo(page);
+    print(videoModel!.results!.length.toString());
     return videoModel!;
   }
 
