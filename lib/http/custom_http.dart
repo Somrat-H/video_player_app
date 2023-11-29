@@ -10,7 +10,7 @@ class CustomHttp {
 
     try {
       var response = await http.get(Uri.parse("https://test-ximit.mahfil.net/api/trending-video/1?&page=$page"));
-      var getData = jsonDecode(response.body);
+      var getData = jsonDecode(utf8.decode(response.bodyBytes));
       videoModel = VideoModel.fromJson(getData);
       return videoModel;
 
