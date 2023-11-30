@@ -1,10 +1,10 @@
-import 'dart:convert';
+
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player_app/model/video%20_model.dart';
 import 'package:video_player_app/provider/custom_provider.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:video_player_app/screen/video_play.dart';
 import 'package:video_player_app/screen/widget/custom_video_card.dart';
 class Home extends StatefulWidget {
@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   ScrollController scrollController = ScrollController();
  
-  int _page = 1;
+  final int _page = 1;
   int _offset = 2;
   bool isLoad = false;
 
@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
         
       }
     });
-    // TODO: implement initState
+   
     super.initState();
   }
   
@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-            Text("Trending Video", style: TextStyle(
+            const Text("Trending Video", style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),),
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                    );
               }
               else {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(
                     color: Colors.grey,
                   ),
@@ -105,9 +105,7 @@ class _HomeState extends State<Home> {
             }
             
             ),
-             isLoad == true?Center(
-                    child: CircularProgressIndicator(),
-                  ): Text(""),
+            
             
                     ],
                   ),

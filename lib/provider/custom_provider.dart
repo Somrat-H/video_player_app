@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:video_player_app/http/custom_http.dart';
 import 'package:video_player_app/model/video%20_model.dart';
 
@@ -8,23 +7,11 @@ class CustomProvider with ChangeNotifier {
   // int offset = 2;
   // int page = 1;
   List<Results> myList = [];
-  // Future<List<Results>> getVide()async{
-  //   // print(offset);
-
-  //   videoModel = await CustomHttp.getVideo(page, offset);
-  //   myList.addAll(videoModel!.results!.toList() );
-  //   print(myList.toString());
-
-  //   ChangeNotifier();
-  //   // print(myList.length);
-  //   return myList;
-  // }
+  
   Future<List<Results>> getVide(int page, int offset) async {
     // print(offset);
-    print("page $page and offset $offset");
     videoModel = await CustomHttp.getVideo(page, offset);
     myList.addAll(videoModel!.results as List<Results>);
-    print(myList.toString());
 
     ChangeNotifier();
     // print(myList.length);
@@ -50,6 +37,7 @@ class CustomProvider with ChangeNotifier {
     //     ChangeNotifier();
     // // print("Page $page and offset $offset");
     //   }
+
     getVide(page, offset);
 
     ChangeNotifier();

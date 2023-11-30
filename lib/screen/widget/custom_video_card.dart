@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+// ignore: must_be_immutable
 class CustomVideoCard extends StatelessWidget {
   final String image;
   final String channelImage;
   final String title;
   final String views;
+  // ignore: prefer_typing_uninitialized_variables
   var date;
   final Function() onTap;
   CustomVideoCard({super.key, required this.channelImage, required this.title, required this.date, required this.image, required this.views, required this.onTap});
@@ -35,7 +37,7 @@ class CustomVideoCard extends StatelessWidget {
                       ),
                     ),
                     DecoratedBox(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white
                       ),
                       child: Column(
@@ -56,16 +58,16 @@ class CustomVideoCard extends StatelessWidget {
                               Expanded(
                                 child: Padding(
                                         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 0),
-                                        child: Text("${title}",style: TextStyle(
+                                        child: Text(title,style: const TextStyle(
                                           fontWeight: FontWeight.w800,
                                           
                                         ),),
                                       ),
                               ),
                               
-                              Padding(
-                                padding: const EdgeInsets.only(top:0),
-                                child: Icon(Icons.more_vert_rounded, color: Colors.grey,),
+                              const Padding(
+                                padding: EdgeInsets.only(top:0),
+                                child:  Icon(Icons.more_vert_rounded, color: Colors.grey,),
                               )
                             ],),
                           ),

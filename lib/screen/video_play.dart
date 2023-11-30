@@ -146,7 +146,7 @@ class _VideoPlayState extends State<VideoPlay> {
                         children: [
                           InkWell(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (_)=> ChannelPage()));
+                              Navigator.push(context, MaterialPageRoute(builder: (_)=> const ChannelPage()));
                             },
                             child: CircleAvatar(
                               backgroundImage: NetworkImage(widget.channelImage),
@@ -157,7 +157,7 @@ class _VideoPlayState extends State<VideoPlay> {
                             padding: const EdgeInsets.only(left: 10.0),
                             child: InkWell(
                               onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (_)=> ChannelPage()));
+                                Navigator.push(context, MaterialPageRoute(builder: (_)=> const ChannelPage()));
                               },
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,14 +217,14 @@ class _VideoPlayState extends State<VideoPlay> {
                   padding: const EdgeInsets.symmetric(horizontal:10.0),
                   child: InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_)=> CommentPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=> const CommentPage()));
                     },
                     child: DecoratedBox(decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10), 
                       border: Border.all(color: Colors.grey.shade400)
                     ),
-                    child:  Padding(
+                    child:  const Padding(
                       padding: EdgeInsets.all(14.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
