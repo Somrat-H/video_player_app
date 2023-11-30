@@ -1,16 +1,30 @@
-# video_player_app
 
-A new Flutter project.
+# Video Player App
 
-## Getting Started
+This is simple Video Player App. This app contain some trending video. So, from this app you can see trending video.
 
-This project is a starting point for a Flutter application.
+Mainly, using Provider State Management for this app. So, got all video fetch from api. When user can tap on video then video play automatic and pause, play option also available.
 
-A few resources to get you started if this is your first Flutter project:
+Usses Package:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    1.provider
+    2.video_Player
+    3.http
+    4.intl(for Format DateTime)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## Screenshots
+
+<img width="256" alt="image" src="https://github.com/Somrat-H/video_player_app/assets/88571561/1084d3be-a838-4930-a8b7-b3eca97e1ad5">
+
+
+<img width="257" alt="image" src="https://github.com/Somrat-H/video_player_app/assets/88571561/af3fc3d6-c044-4922-967d-13ee9d013a80">
+
+
+
+
+## Authors
+
+- [@Somrat-H](https://www.github.com/Somrat-H)
+
