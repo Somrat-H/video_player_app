@@ -5,13 +5,14 @@ import 'package:http/http.dart' as http;
 import 'package:video_player_app/model/video%20_model.dart';
 
 class CustomHttp {
-  static Future<VideoModel> getVideo(int page) async {
+  static Future<VideoModel> getVideo(int page, int offset) async {
     VideoModel? videoModel;
 
     try {
-      var response = await http.get(Uri.parse("https://test-ximit.mahfil.net/api/trending-video/1?&page=$page"));
+      var response = await http.get(Uri.parse("https://test-ximit.mahfil.net/api/trending-video/$offset?&page=$page"));
       var getData = jsonDecode(utf8.decode(response.bodyBytes));
       videoModel = VideoModel.fromJson(getData);
+
       return videoModel;
 
     } catch (e) {
