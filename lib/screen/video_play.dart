@@ -31,9 +31,11 @@ class _VideoPlayState extends State<VideoPlay> {
     _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(
         widget.manifest), videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true) )
       ..initialize().then((_) {
-
-        setState(() {});
+        setState(() {
+          _videoPlayerController.play();
+        });
       });
+      
       if (kDebugMode) {
         print("ratio${_videoPlayerController.value.aspectRatio.toDouble()}");
       }
