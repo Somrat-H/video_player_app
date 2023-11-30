@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:video_player_app/screen/channel_page.dart';
+import 'package:video_player_app/screen/comment_page.dart';
 import 'package:video_player_app/screen/widget/custom_box.dart';
 
 class VideoPlay extends StatefulWidget {
@@ -140,25 +142,35 @@ class _VideoPlayState extends State<VideoPlay> {
                     children: [
                       Row(
                         children: [
-                          CircleAvatar(
-                            backgroundImage: NetworkImage(widget.channelImage),
-                            
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (_)=> ChannelPage()));
+                            },
+                            child: CircleAvatar(
+                              backgroundImage: NetworkImage(widget.channelImage),
+                              
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                            Text(widget.channelName, style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                                            
-                            ),),
-                             Text("${widget.channelSubscriber} Subscriber", style: const TextStyle(
-                             color: Colors.grey,
-                                            
-                            ),),
-                                                  ],
-                                                ),
+                            child: InkWell(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (_)=> ChannelPage()));
+                              },
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                              Text(widget.channelName, style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                              
+                              ),),
+                               Text("${widget.channelSubscriber} Subscriber", style: const TextStyle(
+                               color: Colors.grey,
+                                              
+                              ),),
+                                                    ],
+                                                  ),
+                            ),
                           ),
                         ],
                       ),
@@ -201,24 +213,30 @@ class _VideoPlayState extends State<VideoPlay> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal:10.0),
-                  child: DecoratedBox(decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10), 
-                    border: Border.all(color: Colors.grey.shade400)
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(14.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Add Comment", style: TextStyle(
-                          color: Colors.grey,
-                    
-                        ),),
-                        Icon(Icons.send, color: Colors.grey,),
-                      ],
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_)=> CommentPage()));
+                    },
+                    child: DecoratedBox(decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10), 
+                      border: Border.all(color: Colors.grey.shade400)
                     ),
-                  ),
+                    child:  Padding(
+                      padding: EdgeInsets.all(14.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          
+                          Text("Add Comment", style: TextStyle(
+                            color: Colors.grey,
+                                              
+                          ),),
+                          Icon(Icons.send, color: Colors.grey,),
+                        ],
+                      ),
+                    ),
+                    ),
                   ),
                 ), 
                 const Padding(
