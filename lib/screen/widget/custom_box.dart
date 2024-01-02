@@ -16,7 +16,7 @@ class CustomBox extends StatelessWidget {
                     child: Column(
                       children: [
                         Icon(iconData, color: Colors.grey,),
-                        Text(text, style: TextStyle(
+                        Text(text, style: const TextStyle(
                           color: Colors.grey,
                           fontWeight: FontWeight.w700,
                           fontSize: 16,

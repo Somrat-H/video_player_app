@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:video_player_app/model/video%20_model.dart';
+import 'package:video_player_app/domain/model/video%20_model.dart';
 
 class CustomHttp {
-  static Future<VideoModel> getVideo(int page, int offset) async {
+   Future<VideoModel> getVideo(int page, int offset) async {
     VideoModel? videoModel;
 
     try {

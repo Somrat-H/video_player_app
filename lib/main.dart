@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:video_player_app/provider/custom_provider.dart';
+import 'package:video_player_app/domain/custom_provider.dart';
 import 'package:video_player_app/screen/home.dart';
-import 'package:video_player_app/screen/video_play.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
 
       providers: [ChangeNotifierProvider(create: (_)=> CustomProvider())],
 
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Home(),
       ),
